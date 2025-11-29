@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuestra Historia - Romantic Vintage 🌸</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Courier New', monospace;
+      background: #f9f4ef;
+      background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(210, 180, 140, 0.05) 2px, rgba(210, 180, 140, 0.05) 4px);
+      color: #5a4a42;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /></filter><rect width="100" height="100" filter="url(%23noise)" opacity="0.05"/></svg>');
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .corner-deco {
+      position: fixed;
+      width: 120px;
+      height: 120px;
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .corner-deco.top-left {
+      top: 0;
+      left: 0;
+      background: linear-gradient(135deg, #c8b4d4 0%, transparent 70%);
+      border-bottom-right-radius: 100%;
+    }
+
+    .corner-deco.top-right {
+      top: 0;
+      right: 0;
+      background: linear-gradient(225deg, #c8b4d4 0%, transparent 70%);
+      border-bottom-left-radius: 100%;
+    }
+
+    .corner-deco.bottom-left {
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(45deg, #c8b4d4 0%, transparent 70%);
+      border-top-right-radius: 100%;
+    }
+
+    .corner-deco.bottom-right {
+      bottom: 0;
+      right: 0;
+      background: linear-gradient(315deg, #c8b4d4 0%, transparent 70%);
+      border-top-left-radius: 100%;
+    }
+
+    .sticker {
+      position: fixed;
+      font-size: 2em;
+      opacity: 0.3;
+      animation: float 8s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 3;
+      filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+    }
+
+    .sticker-1 {
+      top: 15%;
+      left: 8%;
+      animation-delay: 0s;
+    }
+
+    .sticker-2 {
+      top: 40%;
+      right: 10%;
+      animation-delay: 2s;
+    }
+
+    .sticker-3 {
+      top: 70%;
+      left: 5%;
+      animation-delay: 4s;
+    }
+
+    .sticker-4 {
+      bottom: 25%;
+      right: 8%;
+      animation-delay: 6s;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(-5deg);
+      }
+
+      50% {
+        transform: translateY(-20px) rotate(5deg);
+      }
+    }
+
+    .main-header {
+      background: linear-gradient(180deg, #f5ebe2 0%, #e8dfd6 100%);
+      color: #5a4a42;
+      text-align: center;
+      padding: 60px 20px 80px;
+      position: relative;
+      border-bottom: 3px solid #d4c4b4;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .main-header::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 30px;
+      background: #c8b4d4;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    }
+
+    .main-header h1 {
+      font-size: 4em;
+      margin-bottom: 15px;
+      font-family: 'Brush Script MT', cursive;
+      color: #8b7394;
+      text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.5);
+    }
+
+    .main-header p {
+      font-size: 1.3em;
+      color: #7a6a72;
+      font-style: italic;
+    }
+
+    .washi-tape {
+      position: absolute;
+      height: 30px;
+      background: repeating-linear-gradient(45deg, rgba(200, 180, 212, 0.6), rgba(200, 180, 212, 0.6) 10px, rgba(180, 160, 192, 0.6) 10px, rgba(180, 160, 192, 0.6) 20px);
+      transform: rotate(-3deg);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .washi-1 {
+      top: 50px;
+      left: -10px;
+      width: 200px;
+    }
+
+    .washi-2 {
+      top: 50px;
+      right: -10px;
+      width: 200px;
+      transform: rotate(3deg);
+    }
+
+    .hero-photo-section {
+      max-width: 1000px;
+      margin: -50px auto 40px;
+      padding: 0 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .polaroid {
+      background: white;
+      padding: 15px 15px 60px 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      max-width: 500px;
+      margin: 0 auto;
+      transform: rotate(-2deg);
+      transition: all 0.3s ease;
+      border: 1px solid #ddd;
+      position: relative;
+    }
+
+    .polaroid:hover {
+      transform: rotate(0deg) scale(1.05);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .polaroid-image {
+      width: 100%;
+      height: 450px;
+      background: linear-gradient(135deg, #e8d5e8 0%, #d4c4d4 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4em;
+      color: #8b7394;
+    }
+
+    .polaroid-caption {
+      text-align: center;
+      margin-top: 15px;
+      font-family: 'Brush Script MT', cursive;
+      font-size: 2em;
+      color: #5a4a42;
+    }
+
+    .tape {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 30px;
+      background: rgba(255, 255, 200, 0.7);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .time-counter {
+      background: white;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 40px;
+      position: relative;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      border: 2px solid #e8dfd6;
+    }
+
+    .time-counter::before,
+    .time-counter::after {
+      content: '';
+      position: absolute;
+      top: -10px;
+      width: 60px;
+      height: 20px;
+      background: repeating-linear-gradient(90deg, rgba(200, 180, 212, 0.8), rgba(200, 180, 212, 0.8) 5px, rgba(220, 200, 232, 0.8) 5px, rgba(220, 200, 232, 0.8) 10px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .time-counter::before {
+      left: 30px;
+    }
+
+    .time-counter::after {
+      right: 30px;
+    }
+
+    .time-counter h2 {
+      color: #8b7394;
+      font-size: 2em;
+      margin-bottom: 25px;
+      font-family: 'Brush Script MT', cursive;
+      text-align: center;
+    }
+
+    .counter-display {
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .counter-box {
+      background: #f5ebe2;
+      border: 3px dashed #c8b4d4;
+      padding: 20px 30px;
+      min-width: 120px;
+      text-align: center;
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .counter-number {
+      font-size: 2.5em;
+      font-weight: bold;
+      display: block;
+      color: #8b7394;
+      font-family: Georgia, serif;
+    }
+
+    .counter-label {
+      font-size: 1em;
+      color: #7a6a72;
+      margin-top: 5px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .chapter {
+      background: white;
+      margin: 50px 0;
+      padding: 50px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+      position: relative;
+      border: 1px solid #e8dfd6;
+      border-left: 4px solid #c8b4d4;
+    }
+
+    .chapter::before {
+      content: '';
+      position: absolute;
+      left: 25px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: repeating-linear-gradient(180deg, transparent, transparent 10px, #f5d5d5 10px, #f5d5d5 15px);
+      opacity: 0.3;
+    }
+
+    .chapter-number {
+      position: absolute;
+      top: -20px;
+      right: 40px;
+      background: #c8b4d4;
+      color: white;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5em;
+      font-weight: bold;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      border: 4px solid white;
+    }
+
+    .chapter-title {
+      font-size: 2.5em;
+      color: #8b7394;
+      margin-bottom: 20px;
+      font-family: 'Brush Script MT', cursive;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .chapter-date {
+      background: #f5ebe2;
+      color: #7a6a72;
+      padding: 8px 20px;
+      border-left: 3px solid #c8b4d4;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-weight: bold;
+      font-size: 0.9em;
+    }
+
+    .chapter-content {
+      font-size: 1.15em;
+      line-height: 2;
+      color: #5a4a42;
+      margin-bottom: 30px;
+    }
+
+    .chapter-content p {
+      margin-bottom: 20px;
+    }
+
+    .whatsapp-chat {
+      width: 90%;
+      max-width: 900px;
+      background: #efeae2;
+      border-radius: 15px;
+      overflow: hidden;
+      margin: 40px auto;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .chat-header {
+      background: #075e54;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      gap: 15px;
+    }
+
+    .profile-pic {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #d4c4d4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5em;
+    }
+
+    .chat-info h3 {
+      font-size: 1.1em;
+      margin: 0;
+    }
+
+    .chat-info p {
+      margin: 0;
+      font-size: 0.9em;
+      color: #d9fdd3;
+    }
+
+    .chat-icons {
+      margin-left: auto;
+      display: flex;
+      gap: 15px;
+      font-size: 1.4em;
+    }
+
+    .chat-body {
+      background: #e5ddd5;
+      padding: 25px 40px;
+      min-height: 400px;
+      max-height: 500px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .message {
+      display: flex;
+      align-items: flex-end;
+      max-width: 70%;
+    }
+
+    .message.sent {
+      align-self: flex-end;
+    }
+
+    .message.received {
+      align-self: flex-start;
+    }
+
+    .bubble {
+      background: #fff;
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-size: 1em;
+      line-height: 1.5;
+      position: relative;
+    }
+
+    .message.sent .bubble {
+      background: #dcf8c6;
+      border-bottom-right-radius: 0;
+    }
+
+    .message.received .bubble {
+      border-bottom-left-radius: 0;
+    }
+
+    .user-pic {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: #8b7394;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 8px;
+      font-size: 0.8em;
+      color: white;
+    }
+
+    .time {
+      font-size: 0.75em;
+      color: #555;
+      display: block;
+      text-align: right;
+      margin-top: 2px;
+    }
+
+    .playlist-section {
+      background: linear-gradient(135deg, #8b7394 0%, #a494aa 100%);
+      color: white;
+      padding: 45px;
+      margin: 40px 0;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      position: relative;
+      border: 3px solid #6a5a74;
+    }
+
+    .playlist-section::before,
+    .playlist-section::after {
+      content: '♫';
+      position: absolute;
+      font-size: 2.5em;
+      opacity: 0.3;
+    }
+
+    .playlist-section::before {
+      top: 15px;
+      left: 20px;
+    }
+
+    .playlist-section::after {
+      bottom: 15px;
+      right: 20px;
+    }
+
+    .playlist-section h3 {
+      font-size: 2.5em;
+      margin-bottom: 25px;
+      font-family: 'Brush Script MT', cursive;
+      text-align: center;
+    }
+
+    .song-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .song-item {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 20px;
+      backdrop-filter: blur(5px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      border-radius: 10px;
+    }
+
+    .song-item:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: scale(1.05);
+    }
+
+    .song-item strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.1em;
+    }
+
+    .love-letter {
+      background: #fffef9;
+      padding: 50px;
+      margin: 30px 0;
+      border: 3px double #c8b4d4;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+      font-size: 1.1em;
+      line-height: 2;
+      position: relative;
+    }
+
+    .love-letter::before,
+    .love-letter::after {
+      content: '❦';
+      position: absolute;
+      font-size: 2.5em;
+      color: #c8b4d4;
+      opacity: 0.4;
+    }
+
+    .love-letter::before {
+      top: 20px;
+      left: 30px;
+    }
+
+    .love-letter::after {
+      bottom: 20px;
+      right: 30px;
+    }
+
+    .love-letter p {
+      margin: 20px 0;
+      text-indent: 40px;
+    }
+
+    .signature {
+      text-align: right;
+      font-family: 'Brush Script MT', cursive;
+      font-size: 2.2em;
+      color: #8b7394;
+      margin-top: 40px;
+    }
+
+    .carousel-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .dreams-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .dream-card {
+      background: #fff9e6;
+      padding: 30px 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      transition: all 0.3s ease;
+      border-top: 30px solid rgba(200, 180, 212, 0.3);
+      position: relative;
+    }
+
+    .dream-card::before {
+      content: '📌';
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.5em;
+    }
+
+    .dream-card:nth-child(even) {
+      background: #f5e6ff;
+      border-top-color: rgba(245, 213, 213, 0.4);
+    }
+
+    .dream-card:hover {
+      transform: translateY(-10px) rotate(-2deg);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    .dream-icon {
+      font-size: 3em;
+      margin-bottom: 15px;
+    }
+
+    .dream-text {
+      font-size: 1.05em;
+      line-height: 1.6;
+      color: #5a4a42;
+    }
+
+    .secret-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 75px;
+      height: 75px;
+      background: white;
+      border: 3px solid #c8b4d4;
+      border-radius: 50%;
+      font-size: 2.2em;
+      cursor: pointer;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .secret-button:hover {
+      transform: scale(1.15) rotate(15deg);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(90, 74, 66, 0.9);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 50px;
+      max-width: 600px;
+      box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+      position: relative;
+      border: 4px solid #c8b4d4;
+      margin: 20px;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 2.5em;
+      cursor: pointer;
+      color: #8b7394;
+    }
+
+    .modal-content h2 {
+      color: #8b7394;
+      font-size: 2.5em;
+      margin-bottom: 25px;
+      font-family: 'Brush Script MT', cursive;
+    }
+
+    .modal-content p {
+      font-size: 1.2em;
+      line-height: 1.9;
+      color: #5a4a42;
+    }
+
+    @media (max-width: 768px) {
+      .main-header h1 {
+        font-size: 2.5em;
+      }
+
+      .polaroid {
+        max-width: 90%;
+      }
+
+      .polaroid-image {
+        height: 350px;
+        font-size: 2.5em;
+      }
+
+      .chapter {
+        padding: 35px 25px;
+      }
+
+      .chapter-title {
+        font-size: 2em;
+      }
+
+      .love-letter {
+        padding: 30px 20px;
+      }
+
+      .modal-content {
+        padding: 35px 25px;
+      }
+
+      .counter-box {
+        min-width: 80px;
+        padding: 15px 20px;
+      }
+
+      .counter-number {
+        font-size: 2em;
+      }
+
+      .carousel-item img {
+        height: 300px;
+      }
+
+      .chat-body {
+        padding: 15px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="corner-deco top-left"></div>
+  <div class="corner-deco top-right"></div>
+  <div class="corner-deco bottom-left"></div>
+  <div class="corner-deco bottom-right"></div>
+
+  <div class="sticker sticker-1">🌸</div>
+  <div class="sticker sticker-2">💜</div>
+  <div class="sticker sticker-3">🦋</div>
+  <div class="sticker sticker-4">✨</div>
+
+  <div class="main-header">
+    <div class="washi-tape washi-1"></div>
+    <div class="washi-tape washi-2"></div>
+    <h1>Feliz Aniversario!!❤️</h1>
+    <p>los 3 meses mas preciados</p>
+  </div>
+
+  <div class="hero-photo-section">
+    <div class="polaroid">
+      <div class="tape"></div>
+      <img src="fotos/Imagen de WhatsApp 2025-11-13 a las 14.23.09_033bf469.jpg" alt="Nuestra foto"
+        style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+      <div class="polaroid-caption">Nosotros 💕</div>
+    </div>
+  </div>
+
+  <div class="time-counter">
+    <h2>💕 Tiempo Juntos 💕</h2>
+    <div class="counter-display">
+      <div class="counter-box">
+        <span class="counter-number" id="months">0</span>
+        <span class="counter-label">Meses</span>
+      </div>
+      <div class="counter-box">
+        <span class="counter-number" id="days">0</span>
+        <span class="counter-label">Días</span>
+      </div>
+      <div class="counter-box">
+        <span class="counter-number" id="hours">0</span>
+        <span class="counter-label">Horas</span>
+      </div>
+      <div class="counter-box">
+        <span class="counter-number" id="minutes">0</span>
+        <span class="counter-label">Minutos</span>
+      </div>
+      <div class="counter-box">
+        <span class="counter-number" id="seconds">0</span>
+        <span class="counter-label">Segundos</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="chapter">
+      <div class="chapter-number">01</div>
+      <h2 class="chapter-title">
+        <span>✨</span> Cuando conocí a mi Yaquicita😊
+      </h2>
+      <div class="chapter-date">📅 Preparatoria la academia 2024</div>
+
+      <div class="chapter-content">
+        <p>¿Sabes? Siempre me gusta recordar cómo empezó todo entre nosotros.
+          Tal vez no recuerde el momento exacto en que te vi por primera vez, pero sí tengo muy claro cuándo
+          te hablé por primera vez.
+          Fue en la academia, mientras nos preparábamos para ingresar a la universidad.
+          Esa tarde había un seminario de química con el profesor Jhon Pérez, y el tema era redox.
+
+          Me acerqué a ti hablando de eso, casi sin pensarlo, como si fuera una conversación cualquiera.
+          Te pregunté si te había salido una pregunta del boletín… algo tan simple, tan común, pero que sin
+          saberlo fue el primer paso de todo lo que vino después.
+          No me acerqué con intenciones de enamorar, ni tenía algo planeado. En ese momento solo quería lograr
+          mi objetivo, ingresar, cumplir mi meta.
+
+          Tú estabas en otro salón, en el primero, y recuerdo que una mañana llegaste tarde y en el salon uno te habian
+          cerrado entoces bajaste al salón 2 de ingeniería.
+
+          El profesor de física te pidió que crearas un grupo de WhatsApp del curso, y lo hiciste.
+          Desde ese momento ya tenía tu número, aunque no hice nada con eso. No era el momento, o al menos yo
+          creía que no lo era.
+
+          Un tiempo después, me dijiste que ya no vendrías más a la academia. No me diste muchos detalles,
+          solo que por ciertos motivos dejarías de asistir, y me pediste que te pasara unas fotos del avance
+          de la pizarra.
+          Y sí… no lo hice. Se me olvidó. Pero aunque no llegué a enviarte las fotos, te recordaba de vez en
+          cuando. No fue tristeza profunda, solo una ligera curiosidad, una especie de interés tranquilo por
+          alguien con quien había compartido unas pocas conversaciones, pero que me había parecido especial de
+          alguna forma.
+
+          Después de eso, el tiempo pasó. Seguí con mis clases, concentrado en estudiar, sin imaginar que
+          volvería a verte.
+          Y entonces llegó el examen de admisión.
+
+          El destino, o no sé qué fuerza, quiso que ese día tú y yo termináramos en el mismo salón: el
+          pabellón de nutrición.
+          No lo podía creer. Entre tantas personas, entre tantos lugares posibles, justo ahí estábamos los dos
+          otra vez.
+          Te vi y fue inevitable reconocerte.
+
+          Terminamos el examen, cada uno salió por su lado, sin imaginar que ese día marcaría el inicio de
+          algo más grande.
+          Por la tarde, cuando confirmaron los resultados, sentí una emoción enorme al ver que había
+          ingresado.
+          No pensé en ti en ese momento, estaba emocionado, celebrando, viviendo ese logro tan esperado.
+
+          Pero cuando cayó la noche, en medio de la calma después de todo el día, fue cuando me acordé de ti.
+          Recordé que habíamos estado en el mismo salón, y por alguna razón sentí ganas de saber cómo te había
+          ido.
+          Entonces abrí el grupo que tú habías creado y te escribí, preguntándote si también habías ingresado.
+
+          Y cuando respondiste que sí… no sé explicarlo, pero sentí una alegría sincera, de esas que no se
+          planean, solo se sienten.
+          Tal vez fue ahí, en ese mensaje nocturno, cuando de verdad comenzó nuestra historia.
+
+          Porque desde esa conversación, sin buscarlo, sin planearlo, la vida empezó a unir nuestros caminos
+          de una manera que ninguno de los dos imaginaba.
+          Y hoy, al mirar atrás, entiendo que cada coincidencia, cada clase, cada mensaje y cada silencio
+          fueron parte del mismo destino: encontrarnos. 💖</p>
+      </div>
+      <div class="whatsapp-chat">
+        <!-- Encabezado -->
+        <div class="chat-header">
+          <img src="fotos/imagen1.png" alt="Ella" class="profile-pic">
+          <div class="chat-info">
+            <h3>+51 930 634 888</h3>
+            <p>en línea</p>
+          </div>
+          <div class="chat-icons">
+            <i class="fas fa-video"></i>
+            <i class="fas fa-phone"></i>
+          </div>
+        </div>
+
+        <!-- Mensajes -->
+        <div class="chat-body">
+          <div class="message sent">
+            <div class="bubble">Hola <span class="time">8:42 p. m.</span></div>
+            <img src="fotos/imagen2.png" class="user-pic" alt="Tú">
+          </div>
+
+          <div class="message received">
+            <img src="fotos/imagen1.png" class="user-pic" alt="Ella">
+            <div class="bubble">Hola <span class="time">8:43 p. m.</span></div>
+          </div>
+
+          <div class="message sent">
+            <div class="bubble">ingresaste? <span class="time">8:43 p. m.</span></div>
+            <img src="fotos/imagen2.png" class="user-pic" alt="Tú">
+          </div>
+
+          <div class="message received">
+            <img src="fotos/imagen1.png" class="user-pic" alt="Ella">
+            <div class="bubble">Sí, y tú? <span class="time">8:44 p. m.</span></div>
+          </div>
+
+          <div class="message sent">
+            <div class="bubble">Sí también 😁 <span class="time">8:45 p. m.</span></div>
+            <img src="fotos/imagen2.png" class="user-pic" alt="Tú">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <div class="chapter-number">02</div>
+      <h2 class="chapter-title">
+        <span>💖</span> UN AÑO DE AMISTAD
+      </h2>
+      <div class="chapter-date">📅 2024 - 2025</div>
+
+      <div class="chapter-content">
+        <p>El primer día que volvimos a encontrarnos fue en el bus rumbo a Juliaca. Yo iba con mi amigo Iván,
+          conversando de cualquier cosa, y de pronto subiste tú. No sé por qué, pero ese reencuentro se sintió tan
+          natural… como si la vida estuviera esperando ese momento. Durante el viaje, empezamos a hablar de academias,
+          de álgebra, de geometría… y sin darnos cuenta, la conversación simplemente fluyó. Ahí sentí que algo empezaba.
+
+          Poco después, llegó mi cumpleaños, y te invité a celebrarlo en Juliaca. Viniste a mi cumpleaños, y creo que
+          ahí comenzó de verdad nuestra amistad. Me gustó tanto que ese día estuviéramos felices, bailando, riendo…
+          recuerdo que eras el alma de la fiesta, contagiando a todos con tu energía.
+
+          Con el tiempo nuestra amistad creció, sin forzarse, sin planearla. Un día me invitaste a tu cachimbeada. Yo no
+          sabía si ir o no, estabas sin entradas porque ya las habías vendido todas, y al final, casi a última hora, te
+          pedí una. Yo pensé que la habías guardado para mí, sin siquiera confirmarlo, y terminé haciéndote sentir mal.
+          Aún lo recuerdo y todavía me pesa un poco. Ese día de tu cachimbeada llegué muy tarde. Tan tarde que tus
+          padres ya querían llevarte. Pero aun así saliste a verme. Recuerdo tu cara… estabas un poquito herida por mi
+          tardanza, no enojada, solo dolida. Y lo sentí. Aun así compartimos un buen momento, uno de esos que sin darnos
+          cuenta se vuelven especiales.
+
+          Cuando la fiesta ya estaba terminando, tomamos un taxi para llevarte a tu cuarto, y ahí pasó algo que nunca
+          voy a olvidar: tratabas de quitarte un arete, no podías, y me miraste pidiéndome ayuda. Me acerqué, despacio,
+          con cuidado… y se formó un silencio bonito, suave, de esos que te hacen sentir cerca de alguien. Te ayudé,
+          sonreíste, y te acompañé hasta tu puerta. Ese instante todavía vive en mi memoria.
+
+          Después llegó mi cachimbeada, ese día conociste a mis padres y a mi hermana. Les caíste tan bien… y ese día
+          para mí se volvió importante, porque ahí confirmé que tú ya eras alguien especial en mi vida. Pasaron los días
+          del estudiante, las serenatas en la universidad, y descubrimos que nos gustaba bailar, reír, divertirnos
+          juntos. Ese primer semestre fue hermoso, lleno de momentos que no sabíamos que un día extrañaríamos.
+
+          En segundo semestre, todo fue más tranquilo, pero seguíamos ahí, presentes. Yo tocaba en la sikuriada de mi
+          facultad, tú bailabas en la tuya. Llegó la parada universitaria después de vacaciones. Yo estaba en Chile
+          trabajando, tú ayudabas a tus padres. Hablábamos poco, la vida a veces nos jalaba a distintos ritmos… pero aun
+          así seguíamos conectados. Yo pensaba volver justo antes de clases o quizá para bailar con mi facultad, pero ya
+          no me dejaron integrarme porque había faltado a los ensayos. Me dio pena contártelo. Y tú también te pusiste
+          triste. Recuerdo exactamente lo que me dijiste: “Yami, no me hagas esto…” Y cuando escuché tu voz, cuando
+          dijiste eso, sentí algo. Algo fuerte. Como si tu corazón me estuviera diciendo algo que tú todavía no te
+          atrevías a decir.
+
+          Ese día empecé a cuestionarme si tú querías que estuviera contigo… no solo como amigo. Al día siguiente, sin
+          pensarlo demasiado, dejé Chile y regresé a Puno. Cuando empecé a ir a los ensayos de tu facultad me sentía
+          incómodo, fuera de lugar. A veces pensaba que tal vez debí quedarme en Chile hasta el inicio de clases… pero
+          cada vez que te veía bailar, todo eso desaparecía. Ahí entendí que ya estaba enamorado. Creo que me di cuenta
+          por completo durante ese viaje de regreso. Yo no había vuelto solo para bailar. Había vuelto por ti.
+
+          Llegaron los pasacalles previos a la parada. Y ahí sentí celos. Un chico te pretendía… y fue la primera vez
+          que dentro de mí se movió algo fuerte, algo que me asustó y a la vez me empujó. Esa tarde no pude aguantarlo
+          más: sentí que si no te decía algo, podría perderte. Te confesé un poco de lo que sentía. No fui del todo
+          claro, pero te dejé ver una parte de mi corazón. Y así, sin planearlo, sin buscarlo, nuestra historia se fue
+          escribiendo. Una historia que comenzó en un bus rumbo a Juliaca… y que hoy, todavía, sigue viva dentro de mí.
+        </p>
+      </div>
+
+      <div class="playlist-section">
+        <h3>🎵 Nuestra Música 🎵</h3>
+        <div class="song-list">
+          <div class="song-item">
+            <strong>🎶 DIME CHOLITA</strong>
+            <p>La de ese día especial</p>
+            <audio controls>
+              <source src="musica/ETERNO Suena Bien - DIME CHOLITA morenada 2025 (Video Oficial 4k).mp3"
+                type="audio/mpeg">
+            </audio>
+          </div>
+
+          <div class="song-item">
+            <strong>🎶 MIX QUE BELLO</strong>
+            <p>La que me dijiste que te hace recordar a mi</p>
+            <audio controls>
+              <source src="musica/MIX QUE BELLO - Son del Duke EN VIVO.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+
+          <div class="song-item">
+            <strong>🎶 SOL DE PRIMAVERA</strong>
+            <p>Nuestra favorita</p>
+            <audio controls>
+              <source src="musica/Aullagas - Sol De Primavera (Video Oficial).mp3" type="audio/mpeg">
+            </audio>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="chapter">
+      <div class="chapter-number">02</div>
+      <h2 class="chapter-title">
+        <span>💖</span> TRES MESES DE ENAMORADOS MI AMORCITOO
+      </h2>
+      <div class="chapter-date">📅 29/08/2025 - 29/11/2025</div>
+
+      <div class="chapter-content">
+        <p>Nuestra historia comenzó una tarde en el malecón de Puno, justo frente a la universidad, donde el viento del
+          lago parecía susurrar algo que yo aún no me atrevía a decir. Ese día, el corazón me latía tan fuerte que casi
+          podía escucharlo. Estaba nervioso, inquieto… sentía que cada segundo pesaba más que el anterior.
+
+          Recuerdo que llegaste tarde. Y aunque parezca sencillo decirlo ahora, en ese momento todo mi mundo se movió.
+          Me quedé ahí, mirando el horizonte, pensando si realmente debía hacerlo. Tenía miedo, un miedo profundo de
+          perder esa amistad tan hermosa que habíamos construido.
+          En mi cabeza solo giraban preguntas:
+          ¿Y si no me acepta? ¿Por qué no llega? ¿Qué habrá pasado? ¿Habré hecho algo mal?
+          Tampoco respondías, y yo dudaba si escribirte otra vez o dejar que el destino decidiera por mí.
+
+          Pasaron horas que se sintieron eternas… hasta que finalmente llegaste. En ese instante todo se detuvo. Sentí
+          que las palabras se escapaban de mis manos, que mis ideas se hacían nudos. No sabía si hablar, si callar, si
+          huir o si quedarme ahí contigo. Pero algo dentro de mí gritaba que era el momento.
+
+          Respiré hondo, reuní todo el valor que tenía y, aun temblando, te dije lo que sentía. Lo dije con miedo, sí,
+          pero también con una esperanza que me iluminaba por dentro. Porque sabía que si no lo hacía, cargaría con ese
+          “¿qué hubiera pasado?” por el resto de mi vida.
+
+          Y entonces… dijiste que sí. Aceptaste. Ese instante lo guardo como un tesoro. Mi corazón se llenó de emoción,
+          de alegría, de una felicidad tan grande que mis nervios se convirtieron en una risa silenciosa. Aunque al
+          principio todo era un poco extraño, aunque no sabía cómo actuar ni qué decir, yo solo quería ser yo mismo. Y
+          también te sentía rara, tímida, posiblemente tan confundida como yo. Era un comienzo, uno rápido tal vez, pero
+          tan real y tan nuestro que nunca me arrepentí. Así, con dudas y sonrisas, nació nuestra historia de amor.
+
+          Con el paso de los días empecé a sentirte un poco distante en el chat, pero nunca quise presionarte. Te di tu
+          espacio, tu tiempo, porque tu tranquilidad siempre ha sido importante para mí.
+          Luego llegó nuestro primer mes… nuestro primer aniversario. Y fue uno de los momentos más hermosos que he
+          vivido. Me trajiste una tortita, ¡una tortita! Y yo, en ese instante, sentí que el mundo se hacía más suave.
+          Pensé: sí, aquí me quedo. Y aún guardo tu cajita, con algunas gomitas que jamás comeré, porque son un pedacito
+          de ese día tan especial.
+
+          Amo cuando eres cariñosa. Amo cuando me hablas con ternura, cuando me demuestras tu amor con tus gestos, tus
+          palabras, tus silencios bonitos.
+          Después vino nuestro segundo mes. Tuvimos dificultades, sí. La comunicación se volvió un poquito complicada,
+          pero supimos mirarnos con el corazón y arreglar lo que hacía falta.
+
+          Y hoy… hoy que estamos cumpliendo tres meses, siento que cada paso que damos construye un futuro hermoso para
+          los dos.
+
+          Estas últimas semanas, con la huelga de docentes, no han sido fáciles. Tuvimos momentos buenos, otros no
+          tanto. La comunicación falló, y lo reconozco: de mi parte faltó decir las cosas con más claridad, con más
+          cariño, con más sinceridad. Pero aun así, aquí estoy, contigo, por ti, porque te amo y porque quiero seguir
+          aprendiendo, creciendo y soñando a tu lado.
+
+          Te amo, mi Yaqui… te amo tanto como no tienes idea.
+
+          Si quieres, puedo transformar esta versión en una carta para entregar, en un mensaje más corto para WhatsApp,
+          en algo más poético, o incluso en un texto para dedicarle en una tarjeta especial. ¿Quieres una versión
+          adaptada?
+        </p>
+      </div>
+
+
+    </div>
+
+
+
+    <div class="chapter">
+      <div class="chapter-number">03</div>
+      <h2 class="chapter-title">
+        <span>💝</span> Lo Que Siento Por Ti
+      </h2>
+
+      <div class="love-letter">
+        <p>Mi amor,</p>
+        <p>No hay palabras suficientes para describir lo que siento por ti mi Yaquicita😊. Cada día a tu lado hace que
+          todo sea más bonito, más especial. Eres mi alegría, mi calma, mi motivación… la persona que me hace sonreír
+          sin razón y sentirme completo.</p>
+
+        <p>A tu lado todo tiene sentido. Tus risas, tus abrazos, tus palabras… todo me llena de felicidad. Eres mi
+          compañía perfecta y mi refugio en los días difíciles. No solo te quiero, te admiro, te respeto y me haces
+          querer ser mejor cada día.</p>
+
+        <p>Hoy quiero que sepas que te amo con todo lo que soy, con todo lo que siento, y que cada instante contigo es
+          un regalo que no doy por sentado. Gracias por existir y por ser tú, exactamente como eres.</p>
+
+        <p>Te amo mi yaqui, y decido amarte.</p>
+        <div class="signature">Con todo mi amor, Jamiel 💕</div>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <div class="chapter-number">04</div>
+      <h2 class="chapter-title">
+        <span>📸</span> Nuestros Momentos
+      </h2>
+
+      <div class="carousel-container">
+        <div id="carouselExampleRide" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+          <!-- Indicadores -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleRide" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleRide" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleRide" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleRide" data-bs-slide-to="3"
+              aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleRide" data-bs-slide-to="4"
+              aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#carouselExampleRide" data-bs-slide-to="5"
+              aria-label="Slide 6"></button>
+            <button type="button" data-bs-target="#carouselExampleRide" data-bs-slide-to="6"
+              aria-label="Slide 7"></button>
+            <button type="button" data-bs-target="#carouselExampleRide" data-bs-slide-to="7"
+              aria-label="Slide 8"></button>
+          </div>
+
+          <!-- Items del carrusel -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <!-- Imagen 1 -->
+              <img src="fotos/1.jpg" class="d-block w-100" alt="Nuestro Primer Momento"
+                style="height:500px; border-radius:10px;">
+              <div class="carousel-caption d-none d-md-block"
+                style="background: rgba(139, 115, 148, 0.8); padding: 10px; border-radius: 5px;">
+                <h5>Morenada</h5>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <!-- Imagen 2 -->
+              <img src="fotos/2.jpg" class="d-block w-100" alt="Juntos Siempre"
+                style="height:500px; border-radius:10px;">
+              <div class="carousel-caption d-none d-md-block"
+                style="background: rgba(139, 115, 148, 0.8); padding: 10px; border-radius: 5px;">
+                <h5>Hermosa tarde</h5>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <!-- Imagen 3 -->
+              <img src="fotos/3.jpg" class="d-block w-100" alt="Nuestro Amor" style="height:500px; border-radius:10px;">
+              <div class="carousel-caption d-none d-md-block"
+                style="background: rgba(139, 115, 148, 0.8); padding: 10px; border-radius: 5px;">
+                <h5>Pasando la tardecita Juntos</h5>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <!-- Imagen 4 -->
+              <img src="fotos/4.jpg" class="d-block w-100" alt="Nuestro Amor" style="height:500px; border-radius:10px;">
+              <div class="carousel-caption d-none d-md-block"
+                style="background: rgba(139, 115, 148, 0.8); padding: 10px; border-radius: 5px;">
+                <h5>Linda Tarde</h5>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <!-- Imagen 5 -->
+              <img src="fotos/5.jpg" class="d-block w-100" alt="Nuestro Amor" style="height:500px; border-radius:10px;">
+              <div class="carousel-caption d-none d-md-block"
+                style="background: rgba(139, 115, 148, 0.8); padding: 10px; border-radius: 5px;">
+                <h5>Pre parada</h5>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <!-- Imagen 6 -->
+              <img src="fotos/6.jpg" class="d-block w-100" alt="Nuestro Amor" style="height:500px; border-radius:10px;">
+              <div class="carousel-caption d-none d-md-block"
+                style="background: rgba(139, 115, 148, 0.8); padding: 10px; border-radius: 5px;">
+                <h5>Linda Tarde</h5>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <!-- Imagen 7 -->
+              <img src="fotos/7.jpg" class="d-block w-100" alt="Nuestro Amor" style="height:500px; border-radius:10px;">
+              <div class="carousel-caption d-none d-md-block"
+                style="background: rgba(139, 115, 148, 0.8); padding: 10px; border-radius: 5px;">
+                <h5>Linda salida juntos</h5>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <!-- Imagen 8 -->
+              <img src="fotos/8.jpg" class="d-block w-100" alt="Nuestro Amor" style="height:500px; border-radius:10px;">
+              <div class="carousel-caption d-none d-md-block"
+                style="background: rgba(139, 115, 148, 0.8); padding: 10px; border-radius: 5px;">
+                <h5>cachimbeada</h5>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controles -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="chapter">
+      <div class="chapter-number">05</div>
+      <h2 class="chapter-title">
+        <span>🌈</span> Nuestros Sueños
+      </h2>
+
+      <div class="chapter-content">
+        <p style="text-align: center; font-size: 1.2em;">
+          <em>"Todo lo que quiero vivir contigo..."</em>
+        </p>
+      </div>
+
+      <div class="dreams-grid">
+        <div class="dream-card">
+          <div class="dream-icon">✈️</div>
+          <div class="dream-text">Viajar juntos</div>
+        </div>
+        <div class="dream-card">
+          <div class="dream-icon">🏡</div>
+          <div class="dream-text">Nuestro hogar</div>
+        </div>
+        <div class="dream-card">
+          <div class="dream-icon">🎓</div>
+          <div class="dream-text">Cumplir metas</div>
+        </div>
+        <div class="dream-card">
+          <div class="dream-icon">🌟</div>
+          <div class="dream-text">Crecer juntos</div>
+        </div>
+        <div class="dream-card">
+          <div class="dream-icon">💍</div>
+          <div class="dream-text">Un futuro juntos</div>
+        </div>
+        <div class="dream-card">
+          <div class="dream-icon">🎉</div>
+          <div class="dream-text">Celebrar la vida</div>
+        </div>
+      </div>
+
+      <div class="chapter-content" style="margin-top: 40px; text-align: center;">
+        <p style="font-size: 1.3em; color: #8b7394;">
+          <strong>Este es solo el principio...</strong><br>
+          <em>Y prometo que cada capítulo será mejor A y falta aumentar mas metas claras aqui mi amorcito me gustaria
+            aumentar ❤️</em>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <button class="secret-button" onclick="openSecret()">💌</button>
+
+  <div class="modal" id="secretModal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeSecret()">×</span>
+      <h2>Mensaje Secreto 💕</h2>
+      <p>Has encontrado mi mensaje especial... 🥰</p>
+      <p>Solo quería decirte una vez más: <strong>Eres lo mejor que me ha pasado</strong>. Te amo con todo mi corazón.
+        💖</p>
+      <p style="font-size: 1.8em; margin-top: 20px; text-align: center;">💕 Por siempre juntos 💕</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function actualizarContador() {
+      const fechaInicio = new Date("2025-08-29T00:00:00");
+      const ahora = new Date();
+      const diff = ahora - fechaInicio;
+
+      const totalDias = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const meses = Math.floor(totalDias / 30);
+      const dias = totalDias % 30;
+      const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutos = Math.floor((diff / (1000 * 60)) % 60);
+      const segundos = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("months").textContent = meses;
+      document.getElementById("days").textContent = dias;
+      document.getElementById("hours").textContent = String(horas).padStart(2, '0');
+      document.getElementById("minutes").textContent = String(minutos).padStart(2, '0');
+      document.getElementById("seconds").textContent = String(segundos).padStart(2, '0');
+    }
+
+    actualizarContador();
+    setInterval(actualizarContador, 1000);
+
+    function openSecret() {
+      document.getElementById('secretModal').classList.add('active');
+    }
+
+    function closeSecret() {
+      document.getElementById('secretModal').classList.remove('active');
+    }
+
+    window.onclick = function (event) {
+      const modal = document.getElementById('secretModal');
+      if (event.target == modal) {
+        closeSecret();
+      }
+    }
+  </script>
+</body>
+
+</html>
